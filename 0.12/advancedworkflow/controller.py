@@ -372,6 +372,7 @@ class TicketWorkflowOpTriage(TicketWorkflowOpBase):
                 break
         else:
             self.env.log.error("Bad configuration for 'triage' operation in action '%s'" % action)
+            self.env.log.error("ticket_id: %s, field: %s, ticket_field: %s" % (ticket.id, field, ticket[field]))
             status = 'new'
         return status
 
